@@ -3,13 +3,13 @@
 This project is a complete pipeline for importing, preprocessing, and analyzing earthquake data. It uses a SQLite database and Python scripts to perform data cleaning, feature engineering, and analytical queries.
 
 To run the code, first install the required libraries using the following command.
-pip install -r requirements.txt
+`pip install -r requirements.txt`
 
 Then, by running the pipeline, you can access the cleaned and engineered data in the database.
-python pipeline.py
+`python pipeline.py`
 
 if you using python3:
-python3 pipeline.py
+`python3 pipeline.py`
 
 ## File Structure
 
