@@ -1,4 +1,7 @@
 import subprocess
+from pathlib import Path
+
+Path("database").mkdir(parents=True, exist_ok=True)
 
 def run_step(description, script_path):
     print (f"Running step: {description}")
