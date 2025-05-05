@@ -21,5 +21,5 @@ def import_data_to_db():
     print("Data import completed successfully!")
 
 if __name__ == "__main__":
-    import_data_to_db()
+   # import_data_to_db()
 
