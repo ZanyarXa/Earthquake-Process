@@ -1,0 +1,40 @@
+## Feature Engineering Summary for Earthquake Dataset
+
+This document describes the rationale and process behind the engineered features used in the project.
+
+---
+
+### Overview of Performed Feature Engineering
+
+The code performs a comprehensive feature engineering process on an earthquake dataset, aiming to extract and transform raw data into informative inputs for modeling. Here's what it does:
+
+1. **Date/Time Feature Extraction**: Extracts `year`, `month`, `day_of_week`, and `quarter` from the earthquake timestamp to capture temporal patterns.
+
+2. **Depth Categorization**: Classifies earthquakes into "Shallow", "Intermediate", and "Deep" based on depth using binning. This simplifies analysis and modeling of depth-based differences.
+
+3. **Combined Location Identifier**: Combines `location_source` and `source` to create a unique identifier for each earthquake's reported location.
+
+4. **One-Hot Encoding**: Transforms categorical variables like `type` and `magnitude_type` into binary columns suitable for machine learning.
+
+5. **Yearly Average Magnitude**: Calculates average earthquake magnitude for each year to capture annual intensity trends.
+
+6. **Magnitude Categorization**: Labels magnitudes into custom categories like "Low", "Moderate", "Strong", and "Severe" for interpretability and generalization.
+
+7. **Outlier Handling**: Clips extreme values in `magnitude` and `depth` columns using the IQR method to reduce skew and stabilize training.
+
+8. **Log Transformation**: Applies log1p transformation to `magnitude` and `depth` to normalize distributions and reduce the effect of outliers.
+
+9. **Feature Scaling**: Standardizes key numerical features (`magnitude`, `depth`, `yearly_avg_magnitude`) using `StandardScaler` to bring them to the same scale.
+
+10. **Interaction Features**: Constructs two new features:
+   - `depth_to_magnitude`: Ratio of depth to magnitude.
+   - `magnitude_depth_interaction`: Product of depth and magnitude.
+   These aim to capture interactions that may reveal complex relationships in the data.
+
+11. **Saving Processed Data**: Outputs the final DataFrame to both CSV and Pickle formats for use in the machine learning pipeline.
+
+---
+
+This feature engineering pipeline enriches the raw dataset with derived insights, aiding both predictive modeling and interpretability.
+
+
